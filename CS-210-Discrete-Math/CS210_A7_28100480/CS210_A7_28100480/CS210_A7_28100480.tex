@@ -1,0 +1,167 @@
+% chktex-file 1
+% chktex-file 44
+% chktex-file 45
+% chktex-file 36
+% chktex-file 3
+% chktex-file 8
+% chktex-file 18
+% chktex-file 12
+% chktex-file 13
+
+\documentclass[twoside]{article}
+\usepackage{graphicx,fancyhdr,amsmath,amssymb,amsthm,subfig,url,hyperref}
+\usepackage[margin=1in]{geometry}
+\newtheorem{theorem}{Theorem}
+
+
+%---------------- IMPORTANT: Student and Homework Information -------------
+
+%%% PLEASE FILL THIS OUT WITH YOUR INFORMATION
+\newcommand{\myname}{Your Name: Muhammad Mujtaba}
+\newcommand{\myid}{28100480}
+\newcommand{\hwNo}{Assignment 7}
+%%% END
+
+
+
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO,LE]{\sffamily\bfseries\large LUMS}
+\fancyhead[LO,RE]{\sffamily\bfseries\large CS 210 Discrete Mathematics}
+\fancyfoot[LO,RE]{\sffamily\bfseries\large \myname: \myid @lums.edu.pk}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+%--------------------- This is the title of the document. DO NOT CHANGE IT ------------------------
+
+\title{CS 210 \hwNo}
+\author{\myname \qquad Student ID:\myid}
+\date{}
+
+%--------------------------------- AFTER Entering the Student and Homework Information, write your answers below  ----------------------------------
+
+\begin{document}
+\maketitle
+
+\section*{Question 1}
+\begin{enumerate}
+    \item[(a)] Permutations of BANANAS:\[\frac{7!}{3!\,2!}=420.\]
+    \item[(b)] Find the 244th word in lexicographic order:
+    \begin{itemize}
+        \item 1. Words starting with A: The remaining letters are \{B, N, A, N, A, S\}. \[ \text{Count} = \frac{6!}{2!2!1!1!} = 180 \]
+        \item 2. Words starting with B: The remaining letters are \{A, N, A, N, A, S\}. \[ \text{Count} = \frac{6!}{3!2!1!} = 60 \]
+        \item 3. Determine the target range: \\
+        Cumulative total = $180 + 60 = 240$.
+        We need the 244th word. Since $244 > 240$, the word starts with the next letter, N. \\
+        We are looking for the 4th word starting with N ($244 - 240 = 4$).
+        \item 4. Finding the 4th word starting with N:
+        The remaining letters are \{A, A, A, B, N, S\}.
+        \begin{itemize}
+            \item Try prefix NA: Remaining letters \{A, A, B, N, S\}. 
+            Permutations: $\frac{5!}{2!} = 60$. 
+            Since $4 \le 60$, the word starts with NA.
+            \item Try prefix NAA: Remaining letters \{A, B, N, S\}. 
+            Permutations: $4! = 24$.
+            Since $4 \le 24$, the word starts with NAA.
+            \item Try prefix NAAA: Remaining letters \{B, N, S\}. 
+            Permutations: $3! = 6$.
+            Since $4 \le 6$, the word starts with NAAA.
+        \end{itemize}
+        
+        \item 5. Final Step:
+        We need the 4th permutation of the remaining letters \{B, N, S\}.
+        Sorted lexicographically: B, N, S.
+        \begin{enumerate}
+            \item BNS
+            \item BSN
+            \item NBS
+            \item NSB
+        \end{enumerate}
+        Appending this suffix to the prefix NAAA gives the final word.
+    \end{itemize}
+    
+    \textbf{Answer:} The 244th word is \textbf{NAAANSB}.
+\end{enumerate}
+
+\newpage
+
+\section*{Question 2}
+\begin{enumerate}
+    \item[(a)] A five-digit palindrome has form \(abcba\).  \[9\cdot 10\cdot 10 = 900.\]
+    \item[(b)] Odd palindromes: last digit must be odd → 5 choices: \[5\cdot 10 \cdot 10 = 500.\] 
+               Even palindromes:\[4\cdot 10 \cdot 10 = 400.\]
+\end{enumerate}
+
+\section*{Question 3}
+\begin{enumerate}
+    \item[(a)]  Coefficient of \(x^5\) in \((1+2x)^{11}\) \[\binom{11}{5}2^5 = 462\cdot 32 = 14784.\]
+    \item[(b)]  Coefficient of \(x^7\) in \((2-x)^{14}\) \[-\binom{14}{7}2^7 = -3432\cdot 128 = -439296.\]
+    \item[(c)]  Coefficient of \(x^9 y^9\) in \((4x-3y)^{18}\) \[\binom{18}{9}(4^9)(-3)^9.\]
+\end{enumerate}
+
+\section*{Question 4}
+We count binary string of length \(n\) with one designated 1.
+Counting by number of ones: \[\sum_{k=1}^{n} k\binom{n}{k}.\]
+Counting by position of designated 1: \[n\cdot 2^{n-1}.\]
+Thus: \[\sum_{k=1}^{n} k\binom{n}{k} = n2^{n-1}.\]
+
+\newpage
+
+\section*{Question 5}
+Prove the hexagon identity: \[ \binom{n-1}{k-1}\binom{n}{k+1}\binom{n+1}{k} = \binom{n-1}{k}\binom{n}{k-1}\binom{n+1}{k+1} \]
+Proof: We expand the binomial coefficients using \[\binom{n}{r} = \frac{n!}{r!(n-r)!}\]
+LHS Expansion: \[\frac{(n-1)!}{(k-1)!(n-k)!} \cdot \frac{n!}{(k+1)!(n-k-1)!} \cdot \frac{(n+1)!}{k!(n+1-k)!} \]
+Grouping numerators and denominators:\[ \text{LHS} = \frac{(n-1)! n! (n+1)!}{ [(k-1)! (k+1)! k!] \cdot [(n-k)! (n-k-1)! (n-k+1)!] }\]
+
+RHS Expansion: \[\frac{(n-1)!}{k!(n-1-k)!} \cdot \frac{n!}{(k-1)!(n-k+1)!} \cdot \frac{(n+1)!}{(k+1)!(n-k)!}\]
+Grouping numerators and denominators: \[ \text{RHS} = \frac{(n-1)! n! (n+1)!}{ [k! (k-1)! (k+1)!] \cdot [(n-k-1)! (n-k+1)! (n-k)!] }\]
+Conclusion:
+The numerators are identical. The sets of factorials in the denominators are just rearranged but contain the exact same terms. Therefore, LHS = RHS.
+
+\section*{Question 6}
+Suppose 6 distinct devices (3 distinct interface cards, printer, mouse, modem) must be plugged into 8 distinct slots.
+\begin{enumerate}
+    \item[(a)] Total number of ways \\
+               We choose an ordered set of 6 slots from 8:\[ {}_{8}P_{6} = 8\cdot7\cdot6\cdot5\cdot4\cdot3 = 20160. \]
+    \item[(b)] No two interface cards adjacent \\
+               We choose an ordered set of 6 slots from 8:\[ {}_{8}P_{6} = 8\cdot7\cdot6\cdot5\cdot4\cdot3 = 20160. \]
+               Number of ways to choose 3 non-adjacent positions among 8 is: \[ \binom{8-3+1}{3} = \binom{6}{3} = 20. \]
+               Arrange the 3 cards: \[3! = 6. \]
+               Choose 3 of the remaining 5 slots for the 3 remaining devices: \[ {}_{5}P_{3} = 5\cdot4\cdot3 = 60. \]
+               Thus total: \[ 20 \cdot 6 \cdot 60 = 7200. \]
+\end{enumerate}
+
+\section*{Question 7}
+Since the teams are indistinguishable (unlabeled), we can categorize the valid distributions based on the integer partitions of 7 into 3 parts (i.e., the possible sizes of the teams). There are four distinct cases:
+
+\begin{enumerate}
+    \item Case 1: Team sizes are \{5, 1, 1\} \\
+    We first select 5 people for the large team. The remaining 2 people automatically form two single-person teams. Since these two teams are identical in size (1) and unlabelled, their order does not matter. \[ \text{Ways} = \binom{7}{5} = 21 \]
+    \item Case 2: Team sizes are \{4, 2, 1\} \\
+    Here, all team sizes are distinct (4, 2, and 1), which makes the groups distinguishable by size.
+    \begin{itemize}
+        \item Choose 4 people for the first team: $\binom{7}{4} = 35$
+        \item Choose 2 people from the remaining 3: $\binom{3}{2} = 3$
+        \item The last person takes the final spot: $\binom{1}{1} = 1$
+    \end{itemize}
+    \[ \text{Ways} = 35 \times 3 \times 1 = 105 \]
+
+    \item Case 3: Team sizes are \{3, 2, 2\} \\
+    First, we choose 3 people for the size-3 team: $\binom{7}{3} = 35$.
+    The remaining 4 people must be partitioned into two unlabelled sets of size 2. We choose 2 people for one group, but since the two groups are indistinguishable, we divide by \[2!\] to correct for overcounting.
+    \[ \text{Ways} = \binom{7}{3} \times \frac{\binom{4}{2}}{2!} = 35 \times \frac{6}{2} = 35 \times 3 = 105 \]
+
+    \item Case 4: Team sizes are \{3, 3, 1\} \\
+    First, we choose 1 person for the size-1 team: $\binom{7}{1} = 7$.
+    The remaining 6 people must be partitioned into two unlabelled sets of size 3. Similar to the previous case, we divide by \[2!.\]
+    \[ \text{Ways} = \binom{7}{1} \times \frac{\binom{6}{3}}{2!} = 7 \times \frac{20}{2} = 7 \times 10 = 70 \]
+\end{enumerate}
+
+\textbf{Total Ways:}
+Summing the results from the four cases:
+\[ 21 + 105 + 105 + 70 = 301 \]
+
+\textbf{Answer:} There are \textbf{301} ways to choose the teams.
+\end{document}

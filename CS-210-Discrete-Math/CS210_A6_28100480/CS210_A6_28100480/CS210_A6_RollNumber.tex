@@ -1,0 +1,90 @@
+% chktex-file 1
+% chktex-file 44
+% chktex-file 45
+% chktex-file 36
+% chktex-file 3
+% chktex-file 8
+% chktex-file 18
+% chktex-file 12
+
+\documentclass[twoside]{article}
+\usepackage{graphicx,fancyhdr,amsmath,amssymb,amsthm,subfig,url,hyperref}
+\usepackage[margin=1in]{geometry}
+\newtheorem{theorem}{Theorem}
+
+
+%---------------- IMPORTANT: Student and Homework Information -------------
+
+%%% PLEASE FILL THIS OUT WITH YOUR INFORMATION
+\newcommand{\myname}{Muhammad Mujtaba}
+\newcommand{\myid}{28100480}
+\newcommand{\hwNo}{Assignment 6}
+%%% END
+
+
+
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO,LE]{\sffamily\bfseries\large LUMS}
+\fancyhead[LO,RE]{\sffamily\bfseries\large CS 210 Discrete Mathematics}
+\fancyfoot[LO,RE]{\sffamily\bfseries\large \myname:\myid @lums.edu.pk}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+%--------------------- This is the title of the document. DO NOT CHANGE IT ------------------------
+
+\title{CS 210 \hwNo}
+\author{\myname \qquad Student ID:\myid}
+\date{}
+
+%--------------------------------- AFTER Entering the Student and Homework Information, write your answers below  ----------------------------------
+
+\begin{document}
+\maketitle
+
+\section*{Problem 1}
+Define \( f:\mathbb{N} \to X \) by \[f(n) = -n.\]
+If \( f(n_1) = f(n_2) \), then \(-n_1 = -n_2 \Rightarrow n_1 = n_2\). Hence \(f\) is injective.
+For any \(x \in X\), we have \(x = -k\) for some \(k \in \mathbb{N}\). Then \(f(k) = -k = x\). Hence \(f\) is surjective.
+Thus, \(f\) is a bijection and \(X\) is countably infinite.
+\[\boxed{|X| = |\mathbb{N}|.}\]
+
+\section*{Problem 2}
+Let \(f:A\to B\) and \(g:B\to C\) be bijections. Consider \(h=g\circ f:A\to C\), defined by \(h(a)=g(f(a))\). \\
+If \(h(a_1)=h(a_2)\), then \(g(f(a_1))=g(f(a_2))\). Since \(g\) is injective, \(f(a_1)=f(a_2)\). As \(f\) is injective, \(a_1=a_2\). \\
+For any \(c\in C\), there exists \(b\in B\) with \(g(b)=c\). Since \(f\) is surjective, there exists \(a\in A\) with \(f(a)=b\). Then \(h(a)=c\).
+Thus, \(h\) is bijective and \(|A|=|C|\).
+\[\boxed{|A|=|C|.}\]
+
+\section*{Problem 3}
+
+\begin{enumerate}
+    \item(i)    Sum of the first \(k\) naturals \\
+                \textbf{Base case:} For \(k=1\), both sides equal 1 \\
+                \textbf{Inductive hypothesis:} Assume \(1+2+\cdots+k = \tfrac{k(k+1)}{2}\). \\
+                \textbf{Inductive step:} \[1+2+\cdots+k+(k+1)=\frac{k(k+1)}{2}+(k+1)=\frac{(k+1)(k+2)}{2}.\]
+                Thus, by induction, the formula holds for all \(n\in\mathbb{N}\)
+    \item(ii)   Sum of squares \\
+                \textbf{Base case:} For \(k=1\), \(1^2=\tfrac{1\cdot2\cdot3}{6}=1\). \\
+                \textbf{Inductive hypothesis:} Assume \(1^2+\cdots+k^2=\tfrac{k(k+1)(2k+1)}{6}\). \\
+                \textbf{Inductive step:} \[1^2+\cdots+k^2+(k+1)^2=\frac{k(k+1)(2k+1)}{6}+(k+1)^2.\]
+                \[=\frac{(k+1)(k(2k+1)+6(k+1))}{6}=\frac{(k+1)(k+2)(2k+3)}{6}.\]
+                Thus, by induction, the formula holds for all \(n\in\mathbb{N}\)
+\end{enumerate}
+
+\newpage
+
+\section*{Problem 4}
+\textbf{Base case:} For \(k=1\), one line divides the plane into two regions. \[\frac{1^2+1+2}{2}=2. \Rightarrow \text{True}\]
+\textbf{Inductive hypothesis:} Assume \(n_k=\tfrac{k^2+k+2}{2}\) regions for \(k\) lines. \\
+\textbf{Inductive step:} Adding the \((k+1)^{th}\) line intersects all previous \(k\) lines at \(k\) distinct points, dividing the new line into \(k+1\) segments. Each segment divides an existing region into two, adding \(k+1\) new regions. Thus,
+\[n_{k+1}=n_k+(k+1)=\frac{k^2+k+2}{2}+(k+1)=\frac{(k+1)^2+(k+1)+2}{2}.\] 
+Thus, by induction, the formula holds for all \(n\in\mathbb{N}\).
+
+
+
+
+
+\end{document}

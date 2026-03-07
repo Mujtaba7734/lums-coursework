@@ -1,0 +1,10 @@
+Opening image file: Logo.png
+Closing image file: Logo.png
+Opening video file: Movie1.mp4
+Closing video file: Movie1.mp4
+Opening video file: Movie2.mp4
+Closing video file: Movie2.mp4
+Directory: TestDirectory
+Image File - Name: Logo.png, Transparent Background: Yes
+Video File - Name: Movie1.mp4, FPS: 30, Length: 120 minutes
+Video File - Name: Movie2.mp4, FPS: 20, Length: 100 minutes

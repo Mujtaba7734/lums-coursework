@@ -1,0 +1,172 @@
+% chktex-file 1
+% chktex-file 44
+% chktex-file 45
+% chktex-file 36
+% chktex-file 3
+% chktex-file 8
+
+\documentclass[twoside]{article}
+\usepackage{graphicx,fancyhdr,amsmath,amssymb,amsthm,subfig,url,hyperref}
+\usepackage[margin=1in]{geometry}
+\newtheorem{theorem}{Theorem}
+
+
+%---------------- IMPORTANT: Student and Homework Information -------------
+
+%%% PLEASE FILL THIS OUT WITH YOUR INFORMATION
+\newcommand{\myname}{Muhammad Mujtaba}
+\newcommand{\myid}{28100480}
+\newcommand{\hwNo}{Assignment 3}
+%%% END
+
+
+
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO,LE]{\sffamily\bfseries\large LUMS}
+\fancyhead[LO,RE]{\sffamily\bfseries\large CS 210 Discrete Mathematics}
+\fancyfoot[LO,RE]{\sffamily\bfseries\large \myname: \myid @lums.edu.pk}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+%--------------------- This is the title of the document. DO NOT CHANGE IT ------------------------
+
+\title{CS 210 \hwNo}
+\author{\myname \qquad Student ID:\myid}
+\newcommand{\currentdate}{3 September 2025}
+\date{\currentdate}
+
+%--------------------------------- AFTER Entering the Student and Homework Information, write your answers below  ----------------------------------
+
+\begin{document}
+\maketitle
+
+\section*{Question 1}
+Collaborated with: X, Y, Z.
+\begin{enumerate}
+    \item[(a)]  $3^5 = 243$
+    \item[(b)]  No, a function f: A $ \rightarrow$ B cannot be injective because the cardinaltiy of A is greater than the cardinaltiy of B.
+                In other words, there aren't enough elements in B to give each element of A a unique image.
+    \item[(c)]  A = $\{1,2,3,4,5\}, B = \{a, b, c\}$ \\
+                \quad f(1) = a, 
+                \quad f(2) = a,
+                \quad f(3) = b,
+                \quad f(4) = b,
+                \quad f(5) = c, \\
+                Each element of B is hit by some value of A. Thus, surjective but not injective. 
+\end{enumerate}
+
+\section*{Question 2}
+Collaborated with: X, Y, Z.
+\begin{enumerate}
+    
+    \item[A.]  No, cos(x) is periodic \\ 
+               Range = $[-1, 1]$
+    \item[B.]  No, many integers share the same value \\
+               All even x map to 1, all odd x map to -1 \\
+               Range =$ \{1, -1\} $
+    \item[C.]  No, for example f(2) is same as f(1/2) \\
+               Deravative of f(x) = $ \frac{1 -x^2}{ (1+x^2)^2}$ and critical points are $\pm 1$ \\
+               Thus, range = $[-\tfrac{1}{2}, \tfrac{1}{2}]$
+    \item[D.]  No, every interval K that maps to the same integer k or k+ 1\\
+               Range = Z All Integers
+    \item[E.]  No, the function is even,  f(x) = f(-x) \\
+               Range = $[0, \infty)$
+\end{enumerate}
+
+\newpage
+
+\section*{Question 3}
+Collaborated with: X, Y, Z.
+\begin{enumerate}
+    \item[(i)] 
+    Let $f: Y \rightarrow Z \quad \text{and} \quad g: X \rightarrow Y $ \\
+    Then their inverses are \\
+    $f^{-1}: Z \rightarrow Y \quad \text{and} \quad g^{-1}: Y \rightarrow X $ \\
+    Since,
+    \[f(X) : \text{Y }\rightarrow \text{Z and g: X } \rightarrow \text{Y, we have f(g(X)) = Z}\]
+    For the inverse, 
+    \[(f \circ g)^{-1}(Z) = X\] 
+    If we apply 
+    \[f^{-1}(Z) = Y \quad \text{and then} \quad g^{-1}(Y) = X\] \\
+    we get 
+    \[X = g^{-1}(f^{-1}(Z))\]
+    Hence, 
+    \[(f \circ g)^{-1}(Z) = g^{-1}(f^{-1}(Z)) \]
+
+    \item[(ii)] 
+    The inverses are:
+    \[f^{-1} = \{(a,1), (b,2), (c,3), (d,4)\},\]
+    \[g^{-1} = \{(3,a), (1,b), (4,c), (2,d)\}.\]
+\end{enumerate}
+
+\section*{Question 4}
+Collaborated with: X, Y, Z.
+\begin{enumerate}
+    \item[Case 1: ] If f is injective, then f is surjective \\
+                    - Since f is injective, no 2 elements of A are mapped to the same element of B \\
+                    - All n elements of A map to n unique elements in B \\
+                    - But B itself has exactly n elements \\
+                    - Therefore, every element of B must be used, nothing is left OUT \\
+                    - Hence, f is surjective
+    
+    \item[Case 2: ] If f is surjective, then f is injective \\
+                    - Since f is surjective, every element of B has atleast 1 element of A that maps into it \\
+                    - Thus, the range(image) of f have n elements \\
+                    - But A also has n elements in total \\
+                    - So, each element of A map exactly one with each element of B \\
+                    - Therefore, f must be injective
+\end{enumerate}
+So, for finite sets A and B of the same size, function is injective iff it is surjective
+
+\newpage
+
+\section*{Question 5}
+Collaborated with: X, Y, Z.
+\begin{enumerate}
+    \item[(a)]  With n=4, that means each instruction has 4 - 1 = 3 choices. So, \\
+                Total possible assignments = $3^{4}$ = 81  \\
+                K is number of lower-index positions; S is the set of lower positions \\
+                k = 3; S = (2,3,4) \\
+                    - i = 1 (not lower): 3 choices \\
+                    - i = 2 (lower): 1 choice \\
+                    - i = 3 (lower): 2 choices \\
+                    - i = 4 (lower): 3 choices \\
+                    Total = 3 * 1 * 2 * 3 = 18 choices 
+
+                Atleast 2 lower positions = Total choices - 3rd position
+                \[81 -18 = 63\]
+
+    
+    \item[(b)]
+        \begin{enumerate}
+            \item[(i)]   a function? \\
+                         Each assignment f is a function: \\
+                         it maps every instruction to exactly one register. \\
+                         Each element of the set of assignments is a set of function. \\
+                         So, \\
+                         Each valid Assignment is a function. The whole collection is a set of functions
+            \item[(ii)]  injective? \\
+                         Nope, Multiple instructions can target the same register, as long as the conditions are satisfied \\
+                         Counter Example: \\
+                            n = 4: assignment (2,1,1,1) is allowed and isn't injective
+            \item[(iii)] surjective?? \\
+                         Nope, An assignment cannot use all register \\
+                         Same Counter Example: \\
+                            n = 4: assignment (2,1,1,1) is allowed and isn' surjective as R3 and R4 isnt used
+        \end{enumerate} 
+
+    \item[(c)]  Yes, sometimes, but not always \\
+                An injective function can exist when the assignment is a dearrangement and m $\le$ n -1; \\
+                dearrangements exists for n $\ge$ 2 \\ \\
+                Dearrangement is the first constraint... permutation with no fixed points \\
+                For example:
+                \[n = 4, m = 2\] 
+                the permutation (4,1,2,3) or (2,1,4,3) are injective derangements and do satisfy the “at least 2 lower indices” requirement.
+
+\end{enumerate}
+
+
+\end{document}

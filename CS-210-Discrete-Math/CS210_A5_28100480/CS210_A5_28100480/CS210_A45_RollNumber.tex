@@ -1,0 +1,191 @@
+% chktex-file 1
+% chktex-file 44
+% chktex-file 45
+% chktex-file 36
+% chktex-file 3
+% chktex-file 8
+% chktex-file 18
+% chktex-file 12
+
+\documentclass[twoside]{article}
+\usepackage{graphicx,fancyhdr,amsmath,amssymb,amsthm,subfig,url,hyperref}
+\usepackage[margin=1in]{geometry}
+\newtheorem{theorem}{Theorem}
+
+
+%---------------- IMPORTANT: Student and Homework Information -------------
+
+%%% PLEASE FILL THIS OUT WITH YOUR INFORMATION
+\newcommand{\myname}{Muhammad Mujtaba: }
+\newcommand{\myid}{28100480}
+\newcommand{\hwNo}{Assignment 5}
+%%% END
+
+
+
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO,LE]{\sffamily\bfseries\large LUMS}
+\fancyhead[LO,RE]{\sffamily\bfseries\large CS 210 Discrete Mathematics}
+\fancyfoot[LO,RE]{\sffamily\bfseries\large \myname: \myid@lums.edu.pk}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+%--------------------- This is the title of the document. DO NOT CHANGE IT ------------------------
+
+\title{CS 210 \hwNo}
+\author{\myname \qquad Student ID:\myid}
+\newcommand{\currentdate}{Due Date: 18 October 2025 at 11:55 pm}
+\date{\currentdate}
+
+%--------------------------------- AFTER Entering the Student and Homework Information, write your answers below  ----------------------------------
+
+\begin{document}
+\maketitle
+
+\section*{Question 1}
+
+\begin{enumerate}
+    \item[(a)]  \[(\sum_{i=1}^n (3i^2 + 2i) = 3\sum_{i=1}^n i^2 + 2\sum_{i=1}^n i = 3\cdot\frac{n(n+1)(2n+1)}{6} + 2\cdot\frac{n(n+1)}{2} = \frac{n(n+1)(2n+3)}{2}) \]
+    \item[(b)]  \[\sum_{j=2}^{5} (j+1)^2 = \sum_{k=3}^{6} k^2 = \frac{6\cdot7\cdot13}{6} - (1^2 + 2^2) = 91 - 5 = 86\]
+    \item[(C)]  \[S = \sum_{k=0}^m 2\left(\frac{1}{3}\right)^k = 2\sum_{k=0}^m \left(\frac{1}{3}\right)^k = 2\cdot\frac{1-(1/3)^{m+1}}{1-1/3} = 3\left(1 - \left(\frac{1}{3}\right)^{m+1}\right)\]
+    \item[(d)]  \[S = \sum_{i=1}^3 \sum_{j=1}^2 (i+j)= \sum_{i=1}^3 (2i+3) = 2(1+2+3) + 9 = 21\] 
+
+\end{enumerate}
+
+\section*{Question 2}
+We want a formula for \[\sum_{k=0}^m \lfloor \sqrt{k} \rfloor.\]
+Let \(t = \lfloor \sqrt{m} \rfloor\). Then for each integer \(r < t\), the term \(\lfloor \sqrt{k}\rfloor = r\) occurs for \((2r+1)\) values of \(k\). Hence 
+\[\sum_{k=0}^m \lfloor \sqrt{k} \rfloor= \sum_{r=0}^{t-1} r(2r+1) + t(m - t^2 + 1) = 2\sum_{r=0}^{t-1} r^2 + \sum_{r=0}^{t-1} r + t(m - t^2 + 1) = \frac{t(t-1)(4t+1)}{6} + t(m - t^2 + 1)\]
+
+\newpage
+
+\section*{Question 3}
+\[S = \sum_{k=1}^n \frac{1}{k(k+2)} = \frac{1}{2}\sum_{k=1}^n \left(\frac{1}{k} - \frac{1}{k+2}\right)
+= \frac{1}{2}\left(1 + \frac{1}{2} - \frac{1}{n+1} - \frac{1}{n+2}\right)
+= \frac{3}{4} - \frac{1}{2}\left(\frac{1}{n+1} + \frac{1}{n+2}\right)\]
+
+\[= \frac{3}{4} \left(\frac{1}{n+1} + \frac{1}{n+2}\right)\]
+
+For \(n=999\),
+\[S_{999} = \frac{3}{4} - \frac{1}{2}\left(\frac{1}{1000} + \frac{1}{1001}\right) = \frac{3}{4} - \frac{2001}{2002000} = \frac{1499499}{2002000}\]
+
+\section*{Question 4}
+ 
+\(R\) on \(\mathbb{N}\times\mathbb{N}\): \((a,b)R(x,y)\) iff \(ay = bx\)
+\begin{enumerate}
+    \item \text{Reflexive:} \(ab = ba\), so \((a,b)R(a,b)\).
+    \item \text{Symmetric:} If \(ay=bx\), then \(bx=ay\), so \((x,y)R(a,b)\).
+    \item \text{Transitive:} If \(ay=bx\) and \(xv=yu\), multiply first by \(v\): \(ayv=bxv=b(yu)=byu\). \\
+            Cancel \(y>0\): \(av=bu\). Hence \((a,b)R(u,v)\). 
+\end{enumerate}
+Thus \(R\) is an equivalence relation.
+
+\section*{Question 5}
+
+\begin{enumerate}
+    \item[(a)] Direct proof start and end: \\
+               To prove the statement directly, we: 
+               \begin{enumerate}
+                \item[(i)] \text{Assume:} \(x\) is rational, i.e., \(x = \frac{p}{q}\) for integers \(p, q\) with \(q \neq 0\)
+                \item[(ii)] \text{Goal:} Show that \(x + \sqrt{2}\) is irrational.
+               \end{enumerate}
+               If we suppose \(x + \sqrt{2}\) were rational, then subtracting \(x\) (a rational) from it would make \(\sqrt{2}\) rational, a contradiction.
+    
+    \item [(b)] Contrapositive: \\
+                The contrapositive of the given statement is:
+                \[(x + \sqrt{2}) \text{ is rational} \;\Rightarrow\; x \text{ is irrational.}\]
+                So, to prove by contraposition:
+                \begin{enumerate}
+                    \item \text{Assume:} \(x + \sqrt{2}\) is rational.
+                    \item \text{Show:} \(x\) must then be irrational.
+                \end{enumerate}
+                Since \(x = (x + \sqrt{2}) - \sqrt{2}\), and the difference of a rational and an irrational number is irrational, \(x\) cannot be rational.
+
+    \item [(c)] To prove by contradiction: 
+                \begin{enumerate}
+                    \item \text{Assume:} \(x\) is rational and \(x + \sqrt{2}\) is rational.
+                    \item \text{Then:} \(\sqrt{2} = (x + \sqrt{2}) - x\) would be rational.
+                \end{enumerate}
+                But \(\sqrt{2}\) is known to be irrational, giving a contradiction. Hence \(x + \sqrt{2}\) must be irrational.
+
+    \item [(d)] Complete Proof: \\
+                Let \(x \in \mathbb{Q}\). Suppose, for contradiction, that \(x + \sqrt{2} \in \mathbb{Q}\).
+                Then \(\sqrt{2} = (x + \sqrt{2}) - x\) is the difference of two rationals, which must be rational.
+                This contradicts the fact that \(\sqrt{2}\) is irrational. Therefore, for all rational \(x\),
+                \[x + \sqrt{2} \text{ is irrational.}\]
+
+
+\end{enumerate}
+
+\end{document}
+\documentclass{article}
+\usepackage{graphicx,fancyhdr,amsmath,amssymb,amsthm,subfig,url,hyperref}
+\usepackage[margin=1in]{geometry}
+\newtheorem{theorem}{Theorem}
+
+
+%---------------- IMPORTANT: Student and Homework Information -------------
+
+%%% PLEASE FILL THIS OUT WITH YOUR INFORMATION
+\newcommand{\myname}{Your Name}
+\newcommand{\myid}{27100000}
+\newcommand{\hwNo}{Homework 0}
+%%% END
+
+
+
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO,LE]{\sffamily\bfseries\large LUMS}
+\fancyhead[LO,RE]{\sffamily\bfseries\large CS 210 Discrete Mathematics}
+\fancyfoot[LO,RE]{\sffamily\bfseries\large \myname: \myid @lums.edu.pk}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+%--------------------- This is the title of the document. DO NOT CHANGE IT ------------------------
+
+\title{CS 210 \hwNo}
+\author{\myname \qquad Student ID:\myid}
+\newcommand{\currentdate}{3 September 2025}
+\date{\currentdate}
+
+%--------------------------------- AFTER Entering the Student and Homework Information, write your answers below  ----------------------------------
+
+\begin{document}
+\maketitle
+
+\section*{Problem 1}
+Collaborated with: X, Y, Z.
+\begin{enumerate}
+    \item %A
+    Your answer for part A.
+    
+    \item %B
+    Next one here for part B.
+    
+    \item %C
+    And so on.
+
+\end{enumerate}
+
+\section*{Problem 2}
+Collaborated with: X, Y, Z.
+\begin{enumerate}
+    \item %A
+    
+    \item %B
+    
+    \item %C
+    
+    \item %D
+    
+    \item %E
+
+\end{enumerate}
+
+\end{document}

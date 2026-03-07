@@ -1,0 +1,143 @@
+% chktex-file 1
+% chktex-file 44
+% chktex-file 45
+% chktex-file 36
+
+\documentclass[twoside]{article}
+\usepackage{graphicx,fancyhdr,amsmath,amssymb,amsthm,subfig,url,hyperref}
+\usepackage[margin=1in]{geometry}
+\newtheorem{theorem}{Theorem}
+
+
+%---------------- IMPORTANT: Student and Homework Information -------------
+
+%%% PLEASE FILL THIS OUT WITH YOUR INFORMATION
+\newcommand{\myname}{Muhammad Mujtaba}
+\newcommand{\myid}{28100480}
+\newcommand{\hwNo}{Homework 1}
+%%% END
+
+
+
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{15pt}
+\fancyhead[RO,LE]{\sffamily\bfseries\large LUMS}
+\fancyhead[LO,RE]{\sffamily\bfseries\large CS 210 Discrete Mathematics}
+\fancyfoot[LO,RE]{\sffamily\bfseries\large \myname: \myid @lums.edu.pk}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+%--------------------- This is the title of the document. DO NOT CHANGE IT ------------------------
+
+\title{CS 210 \hwNo}
+\author{\myname \qquad Student ID:\myid}
+\newcommand{\currentdate}{3 September 2025}
+\date{\currentdate}
+
+%--------------------------------- AFTER Entering the Student and Homework Information, write your answers below  ----------------------------------
+
+\begin{document}
+\maketitle
+
+\section{Question 1}
+
+\begin{enumerate}
+    \item if Triangle ABC is equilateral, then Triangle ABC is isosceles 
+    \item if Triangle ABC is not isosceles, then Triangle ABC is not equilateral
+    \item Triangle ABC is equiangular iff Triangle ABC is equilateral
+    \item Triangle ABC is isosceles and Triangle ABC is not equilateral
+    \item if Triangle ABC is equiangular then Triangle ABC is isosceles
+\end{enumerate}
+
+\section{Question 2}
+
+\begin{enumerate}
+
+    \item 
+
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+            \hline
+            p & q & r & $p \oplus q$ & ($p \oplus q$) $\leftrightarrow r$ & $p \leftrightarrow r$ & $q \leftrightarrow r$ & $p \leftrightarrow r \oplus q \leftrightarrow r$ &  (($p \oplus q$) $\leftrightarrow r$) $\leftrightarrow$ (($p \leftrightarrow r) \oplus (q \leftrightarrow r$))\\
+            \hline 
+            T & T & T & F & F & T & T & F & T \\
+            T & T & F & F & T & F & F & F & F \\
+            T & F & T & T & T & T & F & T & T \\
+            T & F & F & T & F & F & T & T & F \\
+            F & T & T & T & T & F & T & T & T \\
+            F & T & F & T & F & T & F & T & F \\
+            F & F & T & F & F & F & F & F & T \\
+            F & F & F & F & T & T & T & F & F \\
+            \hline
+        \end{tabular}
+
+        Not a Tautology
+    
+    \item %B
+            \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+                \hline
+                p & q & $p \vee q$ &$\neg p$ &$\neg q$ & $p \rightarrow \neg q$ &  $q \rightarrow \neg p$ & ($p \rightarrow \neg q$) $ \vee $ ($q \rightarrow \neg p$) & ($p \vee q$) $\wedge$ (($p \rightarrow \neg q$) $ \vee $ ($q \rightarrow \neg p$)) \\
+                \hline 
+                T & T & T & F & F & F & F & F & F \\
+                T & F & T & F & T & T & T & T & T \\
+                F & T & T & T & F & T & T & T & T \\
+                F & F & F & T & T & T & T & T & F \\
+                \hline
+            \end{tabular}
+
+        \item 
+            $
+            (p \vee q) \wedge ((p \rightarrow \neg q)  \vee  (q \rightarrow \neg p)) \\
+            (p \vee q) \wedge ((\neg p \vee \neg q) \vee (\neg q \vee \neg p)) \quad-- Implication Law\\   
+            (p \vee q) \wedge ((\neg p \vee \neg q) \vee (\neg p \vee \neg q)) \quad-- Commutative Law \\
+            (p \vee q) \wedge (\neg p \vee \neg q) \quad-- Idempotent Law  \\
+            ((p \vee q) \wedge \neg p) \vee ((p \vee q) \wedge \neg q) \quad    --Distributive Law \\
+            ((p \wedge \neg p) \vee (q \wedge \neg p)) \vee ((p \wedge \neg q) \vee (q \wedge \neg q))  \quad-- Distributive Law \\
+            (F \vee (q \wedge \neg p)) \vee ((p \wedge \neg q) \vee F)  \quad -- Negation Law \\ 
+            (q \wedge \neg p) \vee (p \wedge \neg q) \quad -- Identity Law
+            $
+        \item
+            F is equivalent to XOR $\oplus$
+
+\end{enumerate}
+
+\newpage
+
+\section{Problem 3}
+
+    (a)  $\forall x ((P(x) \wedge Q(x)) \rightarrow R(x))  \\$
+    (b)  $\forall x ((\neg P(x) \wedge \neg S(x)) \rightarrow \neg R(x)) \\$
+    (c)  $\forall x ((P(x) \wedge \neg Q(x)) \rightarrow \neg R(x)) \\$
+    (d)  $\exists x (P(x) \wedge \neg R(x)) \\$
+    (e)  $\forall x ((S(x) \wedge Q(x)) \rightarrow R(x)) \\$
+    (f)  $\exists x (\neg P(x) \wedge \neg Q(x) \wedge \neg R(x)) \\$
+    (g)  $\forall x (P(x) \rightarrow Q(x)) \\$
+    (h)  $\forall g \exists x (\neg P(x) \wedge R(x)) \\$
+
+
+\section{Problem 4}
+
+\begin{enumerate}
+    \item  $
+            \neg (\forall x \forall y ((x > y) \Rightarrow (x -y > 0))) \\ \\
+            \exists x \exists y \neg((x > y) \rightarrow (x - y > 0)) \\
+            \exists x \exists y \neg(\neg (x > y) \wedge \neg (x - y > 0)) 
+            \exists x \exists y ((x > y) \wedge \neg (x-y > 0)) \\ \\
+            $ $
+            \exists x \exists y ((x > y) \wedge (x-y \leq 0 )) \\
+            \exists x \exists y ((x > y) \wedge ((x > y) \wedge (x \leq y)))
+            $
+    \item $
+            \neg (\forall x \forall y ((x < y) \Rightarrow \exists x (x < z < y))) \\ \\
+            \exists x \exists y \neg((x < y) \wedge \rightarrow x (x < z <y)) \\
+            \exists x \exists y ((x < y) \wedge \neg \exists x (x < z <y)) \\
+            \exists x \exists y ((x < y) \wedge \forall x \neg(x < z < y)) \\
+            \exists x \exists y ((x < y) \wedge \forall x \neg (x < z \wedge z < y)) \\ \\
+            \exists x \exists y ((x < y) \wedge \forall x (z \leq x \wedge z \geq y)) \\
+            $ 
+
+\end{enumerate}
+
+\end{document}

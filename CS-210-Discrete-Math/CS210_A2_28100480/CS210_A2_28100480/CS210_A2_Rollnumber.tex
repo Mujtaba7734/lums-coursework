@@ -1,0 +1,261 @@
+% chktex-file 1
+% chktex-file 44
+% chktex-file 45
+% chktex-file 36
+
+\documentclass[twoside]{article}
+\usepackage{graphicx,fancyhdr,amsmath,amssymb,amsthm,subfig,url,hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\setlength{\headheight}{15pt}
+\newtheorem{theorem}{Theorem}
+
+
+%---------------- IMPORTANT: Student and Homework Information -------------
+
+%%% PLEASE FILL THIS OUT WITH YOUR INFORMATION
+\newcommand{\myname}{Muhammad Mujtaba}
+\newcommand{\myid}{28100480}
+\newcommand{\hwNo}{Assignment 2}
+%%% END
+
+
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO,LE]{\sffamily\bfseries\large LUMS}
+\fancyhead[LO,RE]{\sffamily\bfseries\large CS 210 Discrete Mathematics}
+\fancyfoot[LO,RE]{\sffamily\bfseries\large \myname: \myid @lums.edu.pk}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+%--------------------- This is the title of the document. DO NOT CHANGE IT ------------------------
+
+\title{CS 210 \hwNo}
+\author{\myname \qquad Student ID:\myid}
+\newcommand{\currentdate}{28 September 2025}
+\date{\currentdate}
+
+%--------------------------------- AFTER Entering the Student and Homework Information, write your answers below  ----------------------------------
+
+\begin{document}
+\maketitle
+
+\section*{Question 1}
+
+\begin{enumerate} 
+    \item[(a)] $ \exists o $ (W(o)) 
+    \item[(b)] $ \exists i \exists c$ (U(i,c) $\wedge$ P(i))
+    \item[(c)] $ \exists c (M(c) \wedge \neg F(c))$
+    \item[(d)] $ \forall c (B(c) \rightarrow W(c))$
+    \item[(e)] $ \forall t \exists s G(s,t)$
+    \item[(f)] $ \forall s \exists c (S(c) \wedge O(c) \wedge A(s,c))$
+    \item[(g)] $ \forall c \exists i F(i,c)$
+    \item[(h)] $ \forall d \exists i (G(i) \wedge H(i,d))$
+    \item[(i)] $ \forall t (t \neq Daniyal \rightarrow \exists P(t,v) )$
+    \item[(j)] $ \forall q \exists t (C(q,t) \rightarrow P(q))$
+    \item[(k)] $ \forall d  (T(d) \rightarrow \exists j \exists c B(j,c,d))$
+    \item[(l)] $ \neg \exists s \exists c (E(s,c) \wedge (L(s, Starset) \vee (L(s, Spiritbox))))$
+    \item[(m)] $ \forall h (H(h) \rightarrow \exists s \exists q A(s,q,h))$
+    \item[(n)] $ \exists i \exists p (M(i) \wedge O(i,p) \vee \forall s \neg R (s,p))$
+    \item[(o)]$ \exists !C(c) \wedge (\forall f (f \neq Tottenham Hotspur \rightarrow F(f)))$
+    \item[(p)] $ \forall s \forall c (U(s,c) \rightarrow P(s))$
+\end{enumerate}
+
+\section*{Question 2}
+\begin{enumerate}
+    \item[(a)] -False: {0} has the single element 0, not $\emptyset$
+    \item[(b)] -True: empty set is a subset of every set
+    \item[(c)] -False: Counterexample: x =0
+    \item[(d)] -False: No integer squares to 2
+    \item[(e)] -False: Since, the structure of LHS and RHS is different (LHS has pairs for each value, RHS has triplets for each value) 
+\end{enumerate}
+
+\newpage
+
+\section*{Question 3}
+
+    $(P\cap Q \cap R \cap \overline{Y}) \cup (\overline{P} \cap R ) \cup (\overline{Q} \cap R ) \cup (R \cap Y) \\ \\ 
+     = R (\cap (P \cap Q \cap \overline{Y})) \cup (\overline{P} \cap R) \cup (\overline{Q} \cap R) \cup (R \cap Y) \quad \text{Associative law} \\
+     = R \cap ((P \cap Q \cap \overline{Y}) \cup \overline{P} \cup \overline{Q} \cup Y) \quad \text{Distributive law} \\
+     = R \cap ((P \cap Q \cap \overline{Y}) \cup \overline{(P \cap Q)} \cup Y) \quad \text{De Morgan's law}\\ 
+     Let A = (P \cap Q) \\
+     = R \cap ((A \cap \overline{Y}) \cup \overline{A} \cup Y ) \\
+     = R \cap (((A \cup \overline{A}) \cap (A \cup \overline{Y})) \cup Y) \quad \text{(distributive law)} \\
+     = R \cap ((U \cap (A \cup \overline{Y})) \cup Y ) \quad \text{(complement law)} \\
+     = R \cap ((A \cup \overline{Y}) \cup Y) \quad \text{(domination law)} \\
+     = R \cap (A \cup U) \quad \text{(identity law)} \\ 
+     = R \cap U \quad \text{(identity law)} \\
+     = R \quad \text{(hence proven).} \\
+    $
+\
+
+\section*{Question 4}
+
+\begin{enumerate}
+    \item[(a)] 
+        $ (X \setminus Y) \setminus Z = X \setminus (Y \cup Z)$ \\ \\
+        Using Set Identities: \\
+            $ 
+            = (X \cap \overline{Y} ) \setminus Z \quad -Difference-Complement Law\\
+            = (X \cap \overline{Y} ) \cap \overline{Z} \quad -Difference-Complement Law\\
+            = X \cap (\overline{Y} \cap \overline{Z}) \quad -Associative Law\\ 
+            = X \setminus (\overline{\overline{Y} \cap \overline{Z}})  \quad -Difference-Complement Law\\
+            = X \setminus (Y \cup Z) \quad -De Morgan's Law\\
+            $
+
+        Using Membership Table:
+
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        X & Y & Z & $X\setminus Y$ & $(X\setminus Y)\setminus Z$ & $Y\cup Z$ & $X\setminus (Y\cup Z)$\\ \hline
+        1 & 1 & 1 & 0 & 0 & 1 & 0 \\ \hline
+        1 & 1 & 0 & 0 & 0 & 1 & 0 \\ \hline
+        1 & 0 & 1 & 1 & 0 & 1 & 0 \\ \hline
+        1 & 0 & 0 & 1 & 1 & 0 & 1 \\ \hline
+        0 & 1 & 1 & 0 & 0 & 1 & 0 \\ \hline
+        0 & 1 & 0 & 0 & 0 & 1 & 0 \\ \hline
+        0 & 0 & 1 & 0 & 0 & 1 & 0 \\ \hline
+        0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+        \end{tabular}
+
+        Column 4 and 6 are identical. So, L.H.S = R.H.S 
+    
+    \newpage
+    \item[(b)]
+        $ \overline{(\overline{X \cap Y} \cup (X \cap \overline{Z}))} = X \cap Y \cap Z $  \\ \\
+        Using Set Identities: \\
+            $ 
+            = \overline{(\overline{X \cap Y} \cup (X \cap \overline{Z}))} 
+            = \overline{\overline{X \cap Y}} \cap \overline{X \cap \overline{Z}} \quad \text{(De Morgan's Law)} \\
+            = (X \cap Y) \cap (\overline{X} \cup Z) \quad \text{(Double Complement \& De Morgan)} \\
+            = (X \cap Y \cap \overline{X}) \cup (X \cap Y \cap Z) \quad \text{(Distributive Law)} \\
+            = \emptyset \cup (X \cap Y \cap Z) \quad \text{(Complement Law)} \\
+            = X \cap Y \cap Z \quad \text{(Identity Law)}
+            $
+        \\
+        Using Membership Table:
+        \\
+
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        X & Y & Z & $\overline{Z}$ & $X\cap Y$ & $ \overline{X \cap Y}$ & $X \cap \overline{Z} $ & $(X \cap \overline{Z}) \cup \overline{X \cap Y}$ & $\overline{(X \cap \overline{Z}) \cup \overline{X \cap Y}}$ & $X\cap Y \cap Z$ \\ \hline
+        1 & 1 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 1 \\ \hline
+        1 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 0 \\ \hline
+        1 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 0 \\ \hline
+        1 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 0 & 0 \\ \hline
+        0 & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 0 \\ \hline
+        0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 \\ \hline
+        0 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 0 \\ \hline
+        0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 \\ \hline
+        \end{tabular}
+
+        Column 9 and 10 are identical. So, L.H.S = R.H.S 
+    \end{enumerate}
+\
+
+\section*{Question 5}
+    
+    \begin{enumerate}
+        \item[a.] $D \times E \times F = \{(p, 7, r), (p, 7, s), (p, 7, t), (q, 7, s), (q, 7, t), (p, 8, r), (p, 8, s), (p, 8, t), (q, 8, r), (q, 8, s), (q, 8, t)\}$
+        \item[b.] $E \times E \times D = \{(7,7,p),(7,7,q),(7,8,p),(7,8,q),(8,7,p),(8,7,q),(8,8,p),(8,8,q) \}$
+        \item[c.] $D \times D \times D = \{(p,p,q),(p,p,p),(p,q,p),(p,q,q),(q,p,q),(q,p,p),(q,q,p),(q,q,q) \}$
+    \end{enumerate}
+
+\
+
+\section*{Question 6}
+    $A = P(P(\emptyset)) = \{\emptyset, \{\emptyset\}\}\\
+     B = P(A) = \{\emptyset, \{\emptyset\}, \{\{\emptyset\}\}, \{\emptyset, \{\emptyset\}\}\}\\
+     C = P(B) = \big\{\emptyset, \{\emptyset\}, \{\{\emptyset\}\}, \{\{\{\emptyset\}\}\}, \\
+                    \{\emptyset, \{\emptyset\}\}, \{\{\emptyset, \{\emptyset\}\}\}, \{\emptyset, \{\{\emptyset\}\}\}, \\
+                    \{\emptyset, \{\emptyset, \{\emptyset\}\}\}, \{\{\emptyset\},\{\{\emptyset\}\}\}, \{\{\emptyset\}, \{\emptyset, \{\emptyset\}\}\}, \\
+                    \{\{\{\emptyset\}\}, \{\emptyset, \{\emptyset\}\}\}, \{\emptyset, \{\emptyset\}, \{\{\emptyset\}\}\}, \{\emptyset, \{\emptyset\}, \{\emptyset,\{\emptyset\}\}\}, \\
+                    \{\emptyset, \{\{\emptyset\}\}, \{\emptyset, \{\emptyset\}\}\}, \{\{\emptyset\}, \{\{\emptyset\}\}, \{\emptyset, \{\emptyset\}\}\}, \{\emptyset, \{\emptyset\}, \{\{\emptyset\}\}, \{\emptyset, \{\emptyset\}\}\} \big\} \\ $
+\
+
+\newpage
+
+\section*{Question 7}
+    \begin{enumerate}
+        \item[(a)] 
+        The expression represents all elements that are in $A \cup B$ but not in A, which simplifies to B $\setminus$ A, not B. \\
+        $ (A \cup B) \setminus A \text{ LHS}\\
+          (A \cup B) \cap \overline{A} \text{ Law:} (A \setminus B = A \cap \overline{B}) \\
+          ((A \cap \overline{A}) \cup (B \cap \overline{A})) \quad \text{Law: Distributive Law} \\
+          (\varnothing \cup (B \cap \overline{A})) \quad \text{Law: Complement Law} \\
+          B \cap \overline{A} \quad \text{Law: Identity Law} \\
+          B \setminus A \quad \text{Law: } (A \cap \overline{B} = A \setminus B) \\
+          B \setminus A \\
+$
+
+        \item[(b)]
+            $ \text{Yes, She is perfectly valid in this case because of no overlap between A and B. so A} \cap B = \emptyset $ 
+        \item[(c)]  
+            $ \text{It is NOT always true.} \\
+            (A \cap B) \cup (B \cap C) \cup (C \cap A) \text {is a type of friends who likes atleast 2 things} \\
+            (A \cup B \cup C) \setminus (A \cap B \cap C) \text {is  a set of friends who likes less than 3 things.}$ \\ \\
+            \text{Counterexample:}
+            Let $A=\{1\}$, $B=\{2\}$, $C=\{3\}$.
+            Then $A\cap B=\varnothing$, $B\cap C=\varnothing$, $C\cap A=\varnothing$.
+            Left-hand side:
+            \[
+            ((A\cap B)\cup (B\cap C))\cup (C\cap A)=\varnothing\cup\varnothing\cup\varnothing=\varnothing.
+            \]
+
+            Right-hand side:
+            \[
+            A\cap(B\cup C)=\{1\}\cap\{2,3\}=\varnothing.
+            \]
+            $\text{This matches,but} 
+            To check this lets assume,  $\\
+            A = \{1, 2, 3\}:Friends who like cats,\\
+            B = \{2, 3, 4\}:Friends who like coffee,\\
+            C = \{3, 4, 5\}:Friends who like studying late at night.\\
+
+            (A $\cap $ B) = \{2, 3\}:who like both cats and coffee,\\  
+            (B $\cap$ C) = \{3, 4\}:who like both coffee and studying late at night, \\
+            (C $\cap$ A) = \{3\}:who like both studying late at night and cats.\\\\
+
+            (A $\cap $ B) $\ \cup $ (B $\cap$ C) $\ \cup $ (C $\cap$ A) = \{3\} $\to$ (1)\\\\
+            Now, \\
+            (A $\cup$ B $\cup$ C) = \{1, 2, 3, 4, 5\}:who like at least one thing\\
+            (A $\cup$ B $\cup$ C)= \{3\}:who like all three thing\\
+            (A $\cup$ B $\cup$ C) $\setminus $ (A $\cup$ B $\cup$ C) = \{1, 2, 4, 5\} $\to$ (2)\\
+
+            From (1) and (2),\\
+            L.H.S $\neq$ R.H.S \\
+
+            So, this counter example shows that the equality is not always true. As L.H.S is not equal to R.H.S.
+
+
+        \end{enumerate}
+\
+\newpage
+
+\section*{Question 8}
+    \begin{enumerate}
+        \item[(a)] "for every element x in universal set U, if x is part of A then x is part of B" \\
+            In simple words, it says that every element of A is also an element of B which actually \\
+            denates that A is subset of B. \\
+            Example: Let \(U=\{1,2,3,4\}\), \(A=\{1,2\}\), and \(B=\{1,2,3\}\). Then for every \(x\in U\), whenever \(x\in A\) it is indeed true that \(x\in B\). So the quantified statement holds in this example.
+        \item[(b)] By definition, \(A\subseteq B\) means “for every \(x\), if \(x\in A\) then \(x\in B\).” That is exactly the quantified statement:
+        \[
+        \forall x\in U,\ (x\in A \rightarrow x\in B).
+        \]
+        To be explicit:
+
+        \begin{itemize}
+        \item If \(\forall x\in U,\ (x\in A \rightarrow x\in B)\) holds, then every element of \(A\) is also in \(B\); hence \(A\subseteq B\).
+        \item Conversely, if \(A\subseteq B\), then by definition every \(x\in A\) satisfies \(x\in B\), so \(\forall x\in U,\ (x\in A \rightarrow x\in B)\) holds.
+        \end{itemize}
+
+        Therefore the two statements are logically equivalent:
+        \[
+        \forall x\in U,\ (x\in A \rightarrow x\in B)\quad\Longleftrightarrow\quad A\subseteq B.
+        \]
+
+    \end{enumerate}
+\
+\end{document}

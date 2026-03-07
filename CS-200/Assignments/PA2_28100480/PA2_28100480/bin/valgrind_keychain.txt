@@ -1,0 +1,67 @@
+==295== Memcheck, a memory error detector
+==295== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==295== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==295== Command: ./bin/test_keychain
+==295== 
+==295== Invalid read of size 1
+==295==    at 0x10951E: keyStoreData (key.c:98)
+==295==    by 0x1099DB: keyChainMoveData (keychain.c:165)
+==295==    by 0x10A3D7: testMoveData (test_keychain.c:208)
+==295==    by 0x10A988: main (test_keychain.c:335)
+==295==  Address 0x4a8afab is 0 bytes after a block of size 11 alloc'd
+==295==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==295==    by 0x109999: keyChainMoveData (keychain.c:158)
+==295==    by 0x10A3D7: testMoveData (test_keychain.c:208)
+==295==    by 0x10A988: main (test_keychain.c:335)
+==295== 
+==295== Invalid read of size 1
+==295==    at 0x10951E: keyStoreData (key.c:98)
+==295==    by 0x1099DB: keyChainMoveData (keychain.c:165)
+==295==    by 0x10A45F: testMoveData (test_keychain.c:218)
+==295==    by 0x10A988: main (test_keychain.c:335)
+==295==  Address 0x4a8b124 is 0 bytes after a block of size 4 alloc'd
+==295==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==295==    by 0x109999: keyChainMoveData (keychain.c:158)
+==295==    by 0x10A45F: testMoveData (test_keychain.c:218)
+==295==    by 0x10A988: main (test_keychain.c:335)
+==295== 
+==295== Invalid read of size 1
+==295==    at 0x484FBF0: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==295==    by 0x10A4AB: testMoveData (test_keychain.c:224)
+==295==    by 0x10A988: main (test_keychain.c:335)
+==295==  Address 0x4a8a734 is 0 bytes after a block of size 4 alloc'd
+==295==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==295==    by 0x109446: keyMalloc (key.c:74)
+==295==    by 0x1096DC: keyChainMalloc (keychain.c:48)
+==295==    by 0x10A862: main (test_keychain.c:317)
+==295== 
+==295== Invalid read of size 1
+==295==    at 0x10951E: keyStoreData (key.c:98)
+==295==    by 0x1099DB: keyChainMoveData (keychain.c:165)
+==295==    by 0x10A4E7: testMoveData (test_keychain.c:229)
+==295==    by 0x10A988: main (test_keychain.c:335)
+==295==  Address 0x4a8b2f0 is 0 bytes after a block of size 16 alloc'd
+==295==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==295==    by 0x109999: keyChainMoveData (keychain.c:158)
+==295==    by 0x10A4E7: testMoveData (test_keychain.c:229)
+==295==    by 0x10A988: main (test_keychain.c:335)
+==295== 
+==295== Invalid read of size 1
+==295==    at 0x484FBF0: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==295==    by 0x10A533: testMoveData (test_keychain.c:235)
+==295==    by 0x10A988: main (test_keychain.c:335)
+==295==  Address 0x4a8a840 is 0 bytes after a block of size 16 alloc'd
+==295==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==295==    by 0x109446: keyMalloc (key.c:74)
+==295==    by 0x1096DC: keyChainMalloc (keychain.c:48)
+==295==    by 0x10A879: main (test_keychain.c:318)
+==295== 
+==295== 
+==295== HEAP SUMMARY:
+==295==     in use at exit: 0 bytes in 0 blocks
+==295==   total heap usage: 45 allocs, 45 frees, 6,559 bytes allocated
+==295== 
+==295== All heap blocks were freed -- no leaks are possible
+==295== 
+==295== For lists of detected and suppressed errors, rerun with: -s
+==295== ERROR SUMMARY: 166 errors from 5 contexts (suppressed: 0 from 0)

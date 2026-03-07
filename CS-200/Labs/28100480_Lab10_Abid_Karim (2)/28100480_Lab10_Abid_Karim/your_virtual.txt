@@ -1,0 +1,9 @@
+Opening file: dummy
+Closing file: dummy
+Opening image file: Logo.png
+Closing image file: Logo.png
+Opening video file: Movie.mp4
+Closing video file: Movie.mp4
+File - Name: dummy
+Image File - Name: Logo.png, Transparent Background: Yes
+Video File - Name: Movie.mp4, FPS: 30, Length: 120 minutes

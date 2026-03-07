@@ -1,0 +1,246 @@
+% chktex-file 1
+% chktex-file 44
+% chktex-file 45
+% chktex-file 36
+% chktex-file 3
+% chktex-file 8
+% chktex-file 18
+% chktex-file 12
+
+\documentclass[twoside]{article}
+\usepackage{graphicx,fancyhdr,amsmath,amssymb,amsthm,subfig,url,hyperref}
+\usepackage[margin=1in]{geometry}
+\newtheorem{theorem}{Theorem}
+
+
+%---------------- IMPORTANT: Student and Homework Information -------------
+
+%%% PLEASE FILL THIS OUT WITH YOUR INFORMATION
+\newcommand{\myname}{Muhammad Mujtaba}
+\newcommand{\myid}{28100480}
+\newcommand{\hwNo}{Assignment 4}
+%%% END
+
+
+
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO,LE]{\sffamily\bfseries\large LUMS}
+\fancyhead[LO,RE]{\sffamily\bfseries\large CS 210 Discrete Mathematics}
+\fancyfoot[LO,RE]{\sffamily\bfseries\large \myname: \myid @lums.edu.pk}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+%--------------------- This is the title of the document. DO NOT CHANGE IT ------------------------
+
+\title{CS 210 \hwNo}
+\author{\myname \qquad Student ID:\myid}
+\newcommand{\currentdate}{Due Date: 18 October 2025 at 11:55 pm}
+\date{\currentdate}
+
+%--------------------------------- AFTER Entering the Student and Homework Information, write your answers below  ----------------------------------
+
+\begin{document}
+\maketitle
+
+\section*{Question 1}
+
+\begin{enumerate}
+    \item[(a.)] 
+    \[\{ (3, 1), (5, 3), (7, 5), (14, 12) \} \]
+    \item[(b.)]
+    Permutations of (1,2,7): 
+    \[ \{ (1,2,7), (1,7,2), (2,1,7), (2,7,1), (7,1,2), (7,2,1) \}\]
+    Permutations of (2, 3,5)
+    \[ \{ (2,3,5), (2,5,3), (3,2,5), (3,5,2), (5,2,3), (5,3,2)\}\]
+    So, R1 is the set of 12 tuples
+    \item[(c.)]
+    R2 = 
+    \[ \{ (1,1), (2,1), (3,1), (5,1), (7,1), (12,1), (14,1) \}\]
+    \[ \{ (2,2), (12,2), (14,2) \}\]
+    \[ \{ (3,3), (12,3) \}\]
+    \[ \{ (5,5) \}\]
+    \[ \{ (7,7), (14,7) \}\]
+    \[ \{ (12,12), (14,14)\}\]
+
+\end{enumerate}
+
+\section*{Question 2}
+\begin{enumerate}
+    \item[(a)]  This is reflexive, symmetric, antisymmetic. \\
+                Yes, the constraint changes. A relation is symmetric and antisymmetric if and only if all its pairs $(a,b)$ have $a=b$. \\
+                If it must be reflexive, it must be the full identity relation  \[R = \{(1,1), (3,3), (7,7), (4,4)\} \]
+                If it doesn't have to be reflexive, it can be any subset of the identity relation. For example, \[ R = \{(1,1), (3,3)\} \] and $R = \emptyset$ are both symmetric and antisymmetric but not reflexive. 
+
+    \item[(b)]  \[R = \{(1,1), (3,3), (7,7), (4,4), (1,3), (3,1)\} \] 
+                Reflexive: Contains all $(a,a)$ pairs. \\
+                Symmetric: Contains $(1,3)$ and its symmetric pair $(3,1)$. \\
+                Not Antisymmetric: $(1,3) \in R$ and $(3,1) \in R$, but $1 \neq 3$. 
+
+    \item[(c)]  \[R = \{(1,1), (3,3), (7,7), (4,4), (1,4)\} \]
+                It is Reflexive, Antisymmetric, Not symmetric
+\end{enumerate}
+
+\section*{Question 3}
+
+\begin{enumerate}
+    \item[(i)] 
+    Reflexive: $ab = ba$. This is true. (Reflexive)
+
+    Symmetric: if ad = bc, then cb = da
+    
+    Transitive fails \\ 
+    Counter-Example: \\
+        $ad = bc \implies 1 \cdot 0 = 0 \cdot 0 \implies 0 = 0$. (True) \\
+        $cf = de \implies 0 \cdot 1 = 0 \cdot 0 \implies 0 = 0$. (True) \\
+        $af = be \implies 1 \cdot 1 = 0 \cdot 0 \implies 1 = 0$. (False) \\
+        Since the relation is not Transitive, its not an equivalence relation.
+    
+    \item[(ii)]
+    Reflexive: $ab = ba$. (True) \\
+    Symmetric: $ad = bc \implies cb = da$. (True) \\
+    Transitive: Assume $((a,b)) R ((c,d))$ and $((c,d)) R ((e,f))$. \\
+    So ad = bc and cf = de. Multiply the first by f and second by b \\
+    adf = bcf and bcf = bde. \\
+    So adf = bde. Since d $\neq$ 0 we may cancel d to get af = be. \\
+    Hence, (a,b)R(e,f). Therefore, R is reflexive, symmetric and transitive.
+\end{enumerate}
+
+\section*{Question 4}
+
+\begin{enumerate}
+    \item[(a.)] \[ R = ((1,3), (1,3)), ((1,3), (2,2)), ((1,3), (3,1)), ((2,2), (1,3)), ((3,1), (1,3)) \]
+    \item[(b.)] Reflexive: $((x_1, y_1)) R ((x_1, y_1))$ because $x_1+y_1 = x_1+y_1$. \\
+                Example: $((1,2), (1,2)) \in R$ because $1+2 = 1+2$. 
+
+                Symmetric: If $((x_1, y_1)) R ((x_2, y_2))$, then $x_1+y_1 = x_2+y_2$. \\
+                By the symmetric property of equality, $x_2+y_2 = x_1+y_1$, so $((x_2, y_2)) R ((x_1, y_1))$. \\
+                Example: $((1,3), (2,2)) \in R$ (since $1+3=4$ and $2+2=4$), which implies $((2,2), (1,3)) \in R$. 
+                
+                Transitive: If $((x_1, y_1)) R ((x_2, y_2))$ and $((x_2, y_2)) R ((x_3, y_3))$ \\ 
+                then $x_1+y_1 = x_2+y_2$ and $x_2+y_2 = x_3+y_3$. \\ 
+                By the transitive property of equality, $x_1+y_1 = x_3+y_3$, so $((x_1, y_1)) R ((x_3, y_3))$.
+\end{enumerate}
+
+\section*{Question 5}
+
+    \begin{enumerate}
+        \item[(a.)]   We must prove $x R x$ for all $x \in \mathbb{Z}$. \\
+                      $x R x$ means $x \cdot x \ge 0$, which is $x^2 \ge 0$. \\
+                      The square of any real number (including all integers) is always greater than or equal to 0. \\
+                      Therefore, R is reflexive.
+        \item[(b.)]   We must prove that if $x R y$, then $y R x$. \\
+                      Assume $x R y$, which means $xy \ge 0$. \\
+                      By the commutative property of multiplication, $yx = xy$. \\
+                      Since $xy \ge 0$, it must be that $yx \ge 0$. \\
+                      $yx \ge 0$ means $y R x$. \\
+                      Therefore, R is symmetric.
+
+        \item[(c.)]   Not Transitive. \\
+                      Counterexample: Let $x = 5$, $y = 0$, and $z = -3$. \\
+                      $x R y$: $x \cdot y = 5 \cdot 0 = 0$. Since $0 \ge 0$, $x R y$ is true. \\
+                      $y R z$: $y \cdot z = 0 \cdot (-3) = 0$. Since $0 \ge 0$, $y R z$ is true. \\
+                      $x R z$: $x \cdot z = 5 \cdot (-3) = -15$. Since $-15 \not\ge 0$, $x R z$ is false.
+    \end{enumerate}
+
+\section*{Question 6}
+
+\begin{enumerate}
+    \item[(a.)] Not Reflexive. \\
+                For R to be reflexive, $p R p$ must be true for all $p \in S$. This means $p$ must share a root with itself. \\
+                Take p(x) = 1. P has no root,  Thus, $p R p$ is false.
+
+                Symmetric: \\
+                Assume $p R q$. This means "$p$ and $q$ have a root in common", let's call it $r$. 
+                The statement:  "$q$ and $p$ have a root in common" is logically identical. They share the same root $r$. Therefore, $q R p$ is true.
+
+                Not Transitive: \\
+                Counterexample: Let $p(x) = x-1$ (Root: 1), Let $q(x) = (x-1)(x-2)$ (Roots: 1, 2), Let $r(x) = x-2$ (Root: 2) \\
+                $p R q$ is true because they share the root 1. \\
+                $q R r$ is true because they share the root 2. \\
+                $p R r$ is false because $p$'s only root is 1 and $r$'s only root is 2. They have no roots in common.
+\end{enumerate}
+
+\section*{Question 7}
+
+    The error is in the very first step of the argument: "Consider an element $b$, such that $(a, b)$ belongs to $R$."
+    The proof incorrectly assumes that for every element $a \in A$, there exists at least one $b$ such that $a$ is related to $b$. This is not guaranteed.
+    
+    Counterexample: \\
+    Let $A = \{1, 2\}$, $R = \{(1, 1)\}$. \\
+    Symmetric and Transitive. \\
+    Not Reflexive because $(2, 2) \notin R$. \\
+    This relation is symmetric and transitive, but not reflexive, which disproves the original statement. The "proof" fails for $a=2$ because it cannot find any $b$ such that $(2, b) \in R$.
+
+
+\end{document}
+\documentclass{article}
+\usepackage{graphicx,fancyhdr,amsmath,amssymb,amsthm,subfig,url,hyperref}
+\usepackage[margin=1in]{geometry}
+\newtheorem{theorem}{Theorem}
+
+
+%---------------- IMPORTANT: Student and Homework Information -------------
+
+%%% PLEASE FILL THIS OUT WITH YOUR INFORMATION
+\newcommand{\myname}{Your Name}
+\newcommand{\myid}{27100000}
+\newcommand{\hwNo}{Homework 0}
+%%% END
+
+
+
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO,LE]{\sffamily\bfseries\large LUMS}
+\fancyhead[LO,RE]{\sffamily\bfseries\large CS 210 Discrete Mathematics}
+\fancyfoot[LO,RE]{\sffamily\bfseries\large \myname: \myid @lums.edu.pk}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+%--------------------- This is the title of the document. DO NOT CHANGE IT ------------------------
+
+\title{CS 210 \hwNo}
+\author{\myname \qquad Student ID:\myid}
+\newcommand{\currentdate}{3 September 2025}
+\date{\currentdate}
+
+%--------------------------------- AFTER Entering the Student and Homework Information, write your answers below  ----------------------------------
+
+\begin{document}
+\maketitle
+
+\section*{Problem 1}
+Collaborated with: X, Y, Z.
+\begin{enumerate}
+    \item %A
+    Your answer for part A.
+    
+    \item %B
+    Next one here for part B.
+    
+    \item %C
+    And so on.
+
+\end{enumerate}
+
+\section*{Problem 2}
+Collaborated with: X, Y, Z.
+\begin{enumerate}
+    \item %A
+    
+    \item %B
+    
+    \item %C
+    
+    \item %D
+    
+    \item %E
+
+\end{enumerate}
+
+\end{document}
